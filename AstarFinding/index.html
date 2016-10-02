@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A*寻路算法</title>
+    <link rel="stylesheet" href="../lib/css/normalize.css" type="text/css" media="screen">
+    <script src="../lib/js/jquery.js"></script>
+    <script src="finding.js"></script>
+    <style>
+        p{
+            color: #efefef;
+            font-size: 14px;
+            margin: 0;
+            padding: 5px 10px;
+        }
+        #canvas{
+            display: block;
+        }
+        #container{
+            overflow: hidden;
+        }
+        #tip{
+            border-radius: 5px;
+            position: fixed;
+            right: 30px;
+            top:40px;
+            background:rgba(30 , 30 , 30 , 0.6);
+            width:200px;
+            min-height: 300px;
+        }
+        #size{
+            margin-top: 12px;
+            width:90%;
+            padding: 2px 3px;
+        }
+        #sure{
+            margin-top:8px;
+        }
+        #time{
+            color: lightcoral;
+        }
+        #startColor{
+            display: inline-block;
+            width:16px;
+            height:16px;
+            margin-left: 5px;
+            background-color: #ff3366;
+        }
+        #begin{
+            margin-right: 12px;
+        }
+        #endColor{
+            display: inline-block;
+            width:16px;
+            height:16px;
+            margin-left: 5px;
+            background-color: #3366ff;
+        }
+        #text{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        <div id="tip">
+            <p>选定起点：<span id="start"></span><i id="startColor"></i></p>
+            <p>选定终点：<span id="end"></span><i id="endColor"></i></p>
+            <p>程序耗时：<span id="time"></span></p>
+            <p>像素块大小：<input id="size" type="text" value="30" placeholder="请输入像素块大小"><br><input type="button" value="确定" id="sure"></p>
+            <p><input type="button" value="开始" id="begin"><input type="button" value="清除" id="clear"></p>
+            <p id="text">说明：这是一个简单的A*寻路算法实现，采用曼哈顿距离作为估计值，水平及垂直代价为1，对角线则为1.414。可以通过拖拽移动起始点位置，空白区域拖拽制造障碍物。点击清除可清除障碍物，点击开始则开始寻路。</p>
+        </div>
+    </div>
+</body>
+</html>
