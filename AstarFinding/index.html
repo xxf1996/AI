@@ -59,6 +59,10 @@
         #text{
             font-size: 12px;
         }
+        select{
+            margin-top:12px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -68,9 +72,15 @@
             <p>选定起点：<span id="start"></span><i id="startColor"></i></p>
             <p>选定终点：<span id="end"></span><i id="endColor"></i></p>
             <p>程序耗时：<span id="time"></span></p>
+            <p>选择算法：
+                <select id="list">
+                    <option value="JPS" selected>JPS算法</option>
+                    <option value="A">A*算法</option>
+                </select>
+            </p>
             <p>像素块大小：<input id="size" type="text" value="30" placeholder="请输入像素块大小"><br><input type="button" value="确定" id="sure"></p>
             <p><input type="button" value="开始" id="begin"><input type="button" value="清除" id="clear"></p>
-            <p id="text">说明：这是一个简单的A*寻路算法实现，采用曼哈顿距离作为估计值，水平及垂直代价为1，对角线则为1.414。可以通过拖拽移动起始点位置，空白区域拖拽制造障碍物。点击清除可清除障碍物，点击开始则开始寻路。</p>
+            <p id="text">说明：详情请看简介。可以通过拖拽移动起始点位置，空白区域拖拽制造障碍物。点击清除可清除障碍物，点击开始则开始寻路。</p>
         </div>
     </div>
 </body>
